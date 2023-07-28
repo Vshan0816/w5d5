@@ -47,6 +47,7 @@ def biggest_cast
   # limit 3, descending
 
   Movie.joins(:actors).group(:id).order('COUNT(actors.id) DESC').select(:id, :title).limit(3)
+  # Movie.joins(:actors).group(:id).order(Arel.sql('COUNT(*) DESC')).select(:id, :title).limit(3)
 
 end
 
