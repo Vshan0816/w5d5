@@ -5,8 +5,10 @@ def it_was_ok
   #
   # You can use ranges (a..b) inside a where method.
   #
+  score = "3; drop table"
   # Find the id, title, and score of all movies with scores between 2 and 3.
-
+  # Movie.select("id, title, score").where("score BETWEEN 2 AND 3")
+  Movie.select("id, title, score").where(score: 2..3)
 end
 
 def harrison_ford
